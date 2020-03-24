@@ -5,8 +5,8 @@ class UID {
     constructor({ charset = safe, length = 8 } = {}) {
         this.charset = charset
         this.length = length
+        this.excluded = new Set();
     }
-    excluded = new Set()
     exclude(uids = []) {
         this.excluded = new Set(uids)
         return this
@@ -29,4 +29,3 @@ class UID {
 
 export { safe, alpha }
 export default UID
-
